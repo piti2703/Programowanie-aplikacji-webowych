@@ -1,0 +1,101 @@
+body {
+    background-color: #f4f5f5;
+    margin-top: 100px;
+
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.drumkit-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.drumkit-buttons button {
+    width: 120px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    text-transform: uppercase;
+    line-height: 0;
+    margin: 10px;
+    background-color: gray;
+    border-radius: 10px;
+    color: rgb(201, 194, 194);
+}
+
+.drumkit-buttons button.playing {
+    background-color: #c52424;
+}
+
+.recordBtn::after {
+    content: "Start record";
+}
+
+.playBtn::after {
+    content: "Play record";
+}
+
+.playBtn.stopBtn::after {
+    content: "Stop record";
+}
+
+.channels {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.channelContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.progressBar {
+    width: 100%;
+    height: 10px;
+    background:#fff #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progressBar span {
+    position: absolute;
+    height: 4px;
+    background: #c52424;
+    top: 3px;
+    left: 5px;
+    right: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.timeMoment {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 2px;
+    background: #49abff;
+}
+
+@keyframes progressBarAnim {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
